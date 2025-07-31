@@ -586,9 +586,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 389.09171702499964,
-			"y": 407.55633611437645,
-			"lastActivityTimestamp": 1753907572626,
+			"x": -577.2376588813931,
+			"y": 109.01057325211494,
+			"lastActivityTimestamp": 1753935466216,
 			"meta": {}
 		},
 		{
@@ -598,7 +598,7 @@
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
-				"type": "move",
+				"type": "default",
 				"rotation": 0
 			},
 			"isFocusMode": false,
@@ -608,7 +608,7 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 958.3333129882812,
+				"w": 957.5,
 				"h": 642.5
 			},
 			"insets": [
@@ -626,7 +626,7 @@
 			"isFocused": true,
 			"devicePixelRatio": 2.4000000953674316,
 			"isCoarsePointer": false,
-			"isHoveringCanvas": true,
+			"isHoveringCanvas": false,
 			"openMenus": [],
 			"isChangingStyle": false,
 			"isReadonly": false,
@@ -639,9 +639,7 @@
 		{
 			"editingShapeId": null,
 			"croppingShapeId": null,
-			"selectedShapeIds": [
-				"shape:PU_mE3Tzvh2PXdi9BoXWK"
-			],
+			"selectedShapeIds": [],
 			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
@@ -652,12 +650,35 @@
 			"typeName": "instance_page_state"
 		},
 		{
-			"x": -165.52606973495904,
-			"y": 37.47219692974272,
-			"z": 0.8529781377801394,
+			"x": 586.9316686622769,
+			"y": 80.63134874495537,
+			"z": 1,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
+		},
+		{
+			"x": -67.66409530564852,
+			"y": 591.751078419994,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:k6NCBQjj8FgvMmX6aH4T2",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "m",
+				"w": 771.6969924256765,
+				"text": "Exercise : 03\nUnnecessary violence\nTurn-in directory: ex03/\nFiles to turn in: Makefile, main.cpp, Weapon.{h, hpp}, Weapon.cpp, HumanA.{h,\nhpp}, HumanA.cpp, HumanB.{h, hpp}, HumanB.cpp\nForbidden functions: None\nImplement a Weapon class that has:\n  • A private attribute type, which is a string.\n  • A getType() member function that returns a constant reference to type.\n  • A setType() member function that sets type using the new value passed as a parameter.\n  Now, create two classes: HumanA and HumanB. They both have a Weapon and\na name. They also have a member function attack() that displays (without the angle\nbrackets):\n<name> attacks with their <weapon type>\nHumanA and HumanB are almost identical except for these two small details:\n• While HumanA takes the Weapon in its constructor, HumanB does not.\n• HumanB may not always have a weapon, whereas HumanA will always be\narmed",
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 0.6747861092509827
+			},
+			"parentId": "page:page",
+			"index": "aABlN",
+			"typeName": "shape"
 		}
 	]
 }

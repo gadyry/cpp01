@@ -6,13 +6,13 @@
 /*   By: ael-gady <ael-gady@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 19:16:44 by ael-gady          #+#    #+#             */
-/*   Updated: 2025/07/31 04:11:01 by ael-gady         ###   ########.fr       */
+/*   Updated: 2025/07/31 04:16:52 by ael-gady         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main()
+int	main()
 {
 	int N = 8;
 	Zombie* horde = zombieHorde(N, "From Dusk Till Dawn");
@@ -28,4 +28,3 @@ int main()
 		zombie[i].announce();
 	return (0);
 }
-
