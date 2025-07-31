@@ -6,7 +6,7 @@
 /*   By: ael-gady <ael-gady@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 19:16:56 by ael-gady          #+#    #+#             */
-/*   Updated: 2025/07/31 02:33:03 by ael-gady         ###   ########.fr       */
+/*   Updated: 2025/07/31 03:24:43 by ael-gady         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,14 @@
 class Zombie
 {
 private :
-
-	std::string name;
-
+	std::string	name;
 public:
 	Zombie(void);
 	~Zombie();
 	void		announce( void );
 	void		setName(std::string name);
 	std::string getName();
-
 };
-
+	Zombie* newZombie(std::string name);
+	void randomChump(std::string name);
 #endif
