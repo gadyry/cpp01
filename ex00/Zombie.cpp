@@ -6,23 +6,26 @@
 /*   By: ael-gady <ael-gady@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 19:15:27 by ael-gady          #+#    #+#             */
-/*   Updated: 2025/07/30 21:44:08 by ael-gady         ###   ########.fr       */
+/*   Updated: 2025/07/31 02:32:00 by ael-gady         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
 // Constractor :
-Zombie::Zombie(void)
+Zombie::Zombie()
 {
 	this->name = "unknown";
 }
 
 // Destractor :
-Zombie::~Zombie() {std::cout << "Destracor called !!"<< std::endl;}
+Zombie::~Zombie()
+{
+	std::cout << "Destracor called !!"<< std::endl;
+}
 
 // Methods :
-void	Zombie::announce()
+void	Zombie::announce(void)
 {
 	std::cout << "<"<< this->name <<">: "<<"BraiiiiiiinnnzzzZ.."<<std::endl;
 }
