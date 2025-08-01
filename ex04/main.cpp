@@ -6,11 +6,12 @@
 /*   By: ael-gady <ael-gady@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 12:28:20 by ael-gady          #+#    #+#             */
-/*   Updated: 2025/08/01 23:53:52 by ael-gady         ###   ########.fr       */
+/*   Updated: 2025/08/01 23:59:27 by ael-gady         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <fstream>
 
 void	init_args(char **av, std::string& filename,
 		 std::string& s1, std::string& s2)
@@ -27,11 +28,16 @@ int main(int ac, char **av)
 
 	if (ac > 4 || ac < 4)
 	{
-		std::cerr << "Try to tap : ./replace <filename> <s1> <s2>"<< std::endl;
+		std::cerr << "Try to tap : ./replace <filename> <s1> <s2>."<< std::endl;
 		return (1);
 	}
 	init_args(av, filename, s1, s2);
-	std::cout << filename << " | " << s1  << " | " << s2 << " | " << std::endl;
+	std::ifstream in(filename);
+	if (!in.is_open())
+	{
+		std::cerr << "Error: could not open input file '" << filename << "' for reading."<< std::endl;
+		return (1);
+	}
 	
 	return (0);
 }
