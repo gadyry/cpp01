@@ -7,7 +7,7 @@ OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) Weapon.hpp HumanA.hpp HumanB.hpp
 	$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJ)
 
 %.o: %.cpp

@@ -6,7 +6,7 @@
 /*   By: ael-gady <ael-gady@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 12:28:20 by ael-gady          #+#    #+#             */
-/*   Updated: 2025/08/02 05:20:15 by ael-gady         ###   ########.fr       */
+/*   Updated: 2025/08/04 01:45:45 by ael-gady         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	init_args(char **av, std::string& filename,
 int main(int ac, char **av)
 {
 	std::string filename;
-	std::string s1, s2, input;
+	std::string s1, s2, line;
 
 	if (ac != 4)
 	{
@@ -34,8 +34,11 @@ int main(int ac, char **av)
 	}
 	init_args(av, filename, s1, s2);
 
-	// std::ofstream out(filename);
-	// out << "create a filename  :" << filename << std::endl;
+	// if (s1.empty())
+	// {
+	// 	std::cerr << "Error: string to replace (s1) must not be empty." << std::endl;
+	// 	return (1);
+	// }
 
 	std::ifstream in(filename);
 	if (!in.is_open())
@@ -43,12 +46,33 @@ int main(int ac, char **av)
 		std::cerr << "Error: could not open input file '" << filename << "' for reading."<< std::endl;
 		return (1);
 	}
-	while (69)
+
+	std::ofstream out(filename + ".replace");
+	if (!out)
 	{
-		getline(in, input);
-		if (input.empty())
-			break;
-		std::cout <<"this is a content of  "<<filename << " : " << input << std::endl;
+		std::cerr << "Error: could not create output file '" << filename << ".replace" << "'." << std::endl;
+		return (1);
+	}
+	
+	while (std::getline(in, line))
+	{
+		std::string result;
+		std::size_t pos = 0;
+		while (true)
+		{
+			std::size_t found = line.find(s1, pos);
+			if (found > line.size())
+			{
+				result.append(line.substr(pos));
+				break;
+			}
+			result.append(line.substr(pos, found - pos));
+			result.append(s2);
+			pos = found + s1.length();
+		}
+		out << result;
+		if (!in.eof())
+			out << '\n';
 	}
 	return (0);
 }
