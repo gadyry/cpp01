@@ -34,6 +34,11 @@ void	Harl::error()
 	std::cout<<"This is unacceptable! I want to speak to the manager now.\n";
 }
 
+void	Harl::nothing( std::string level )
+{
+	std::cout << "Invalid log level: " << level << std::endl;
+}
+
 // void 	Harl::complain(std::string level)
 // {
 // 	if (level == "DEBUG")
@@ -50,14 +55,15 @@ void 	Harl::complain(std::string level)
 {
 	typedef void (Harl::*HarlFnct)();
 	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	HarlFnct funct[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	HarlFnct complainFct[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
 	for(size_t i = 0; i < 4; i++)
 	{
 		if (level == levels[i])
 		{
-			(this->funct[i])();
+			(this->*complainFct[i])();
 			return ;
 		}
 	}
+	nothing(level);
 }
