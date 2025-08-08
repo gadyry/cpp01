@@ -34,11 +34,11 @@ int main(int ac, char **av)
 	}
 	init_args(av, filename, s1, s2);
 
-	// if (s1.empty())
-	// {
-	// 	std::cerr << "Error: string to replace (s1) must not be empty." << std::endl;
-	// 	return (1);
-	// }
+	if (s1.empty())
+	{
+		std::cerr << "Error: string to replace (s1) must not be empty." << std::endl;
+		return (1);
+	}
 
 	std::ifstream in(filename);
 	if (!in.is_open())
