@@ -2,7 +2,7 @@ NAME = BraiiiiiiinnnzzzZ
 CPP = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp newZombie.cpp rndomChump.cpp Zombie.cpp zombieHorde.cpp
+SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp zombieHorde.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
