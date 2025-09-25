@@ -6,7 +6,7 @@
 /*   By: ael-gady <ael-gady@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 12:28:20 by ael-gady          #+#    #+#             */
-/*   Updated: 2025/08/04 05:46:45 by ael-gady         ###   ########.fr       */
+/*   Updated: 2025/09/19 15:18:02 by ael-gady         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,23 +56,19 @@ int main(int ac, char **av)
 	
 	while (std::getline(in, line))
 	{
-		std::string result;
 		std::size_t pos = 0;
-		while (true)
+		std::size_t found = 0;
+		
+		if (!in.eof()) line += '\n';
+		
+		while ((found = line.find(s1, pos)) != std::string::npos)
 		{
-			std::size_t found = line.find(s1, pos);
-			if (found > line.size())
-			{
-				result.append(line.substr(pos));
-				break;
-			}
-			result.append(line.substr(pos, found - pos));
-			result.append(s2);
-			pos = found + s1.length();
+			line.erase(found, s1.length());
+			line.insert(found, s2);
+			
+			pos = found + s2.length();
 		}
-		out << result;
-		if (!in.eof())
-			out << '\n';
+		out << line;
 	}
 	return (0);
 }

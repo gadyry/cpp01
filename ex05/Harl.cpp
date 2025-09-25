@@ -6,7 +6,7 @@
 /*   By: ael-gady <ael-gady@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 05:45:11 by ael-gady          #+#    #+#             */
-/*   Updated: 2025/08/02 06:45:18 by ael-gady         ###   ########.fr       */
+/*   Updated: 2025/09/19 15:13:22 by ael-gady         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,6 @@ void	Harl::nothing( std::string level )
 	std::cout << "Invalid log level: " << level << std::endl;
 }
 
-// void 	Harl::complain(std::string level)
-// {
-// 	if (level == "DEBUG")
-// 		debug();
-// 	else if (level == "INFO")
-// 		info();
-// 	else if (level == "WARNING")
-// 		warning();
-// 	else if (level == "ERROR")
-// 		error();
-// }
 
 void 	Harl::complain(std::string level)
 {
