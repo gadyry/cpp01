@@ -27,12 +27,15 @@ int main(int argc, char **argv)
 		case 0:
 			std::cout << "[ DEBUG ]\n";
 			harl.complain("DEBUG");
+			//fall through
 		case 1:
 			std::cout << "\n[ INFO ]\n";
 			harl.complain("INFO");
+			//fall through
 		case 2:
 			std::cout << "\n[ WARNING ]\n";
 			harl.complain("WARNING");
+			//fall through
 		case 3:
 			std::cout << "\n[ ERROR ]\n";
 			harl.complain("ERROR");
@@ -43,3 +46,4 @@ int main(int argc, char **argv)
 
 	return (0);
 }
+
