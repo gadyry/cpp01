@@ -14,10 +14,21 @@
 
 Zombie* zombieHorde( int N, std::string name )
 {
-	Zombie *zombie = new Zombie[N];
+	if (N < 0)
+	{
+		std::cerr << "N should be greater or equal 0 !"<<std::endl;
+		return (NULL);
+	}
 
-	for(size_t i = 0; i < N; i++)
-		zombie[i].setName(name);
+    Zombie* zombies = new(std::nothrow) Zombie[N];
 
-	return (zombie);
+    if (!zombies)
+	{
+        std::cerr << "Memory allocation failed for zombie horde!\n";
+        return (NULL);
+    }
+	for(int i = 0; i < N; i++)
+		zombies[i].setName(name);
+
+	return (zombies);
 }

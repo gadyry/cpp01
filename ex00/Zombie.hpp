@@ -14,6 +14,7 @@
 #define ZOMBIE_HPP
 
 #include <iostream>
+#include <new> // for nothrow
 
 class Zombie
 {

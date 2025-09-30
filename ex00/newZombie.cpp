@@ -14,7 +14,13 @@
 
 Zombie*	newZombie( std::string name )
 {
-	Zombie *zombie = new Zombie();
+	Zombie *zombie = new(std::nothrow) Zombie();
+	if (!zombie)
+	{
+		std::cerr << "Failed to create Zombie !"<<std::endl;
+		return (NULL);
+	}
+
 	zombie->setName(name);
 
 	return (zombie);

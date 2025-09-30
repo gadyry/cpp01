@@ -26,7 +26,7 @@ int main()
 	std::cout << "== 	The Value of		: =="<<std::endl;
 	std::cout << "The value of the string variable 		: "<< str <<std::endl;
 	std::cout << "The value pointed to by stringPTR		: "<< *stringPTR <<std::endl;
-	std::cout << "The value pointed to by stringREF		: "<< str <<std::endl;
+	std::cout << "The value pointed to by stringRef		: "<< stringRef <<std::endl;
 
 	return (0);
 }

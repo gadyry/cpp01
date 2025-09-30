@@ -17,7 +17,7 @@ int	main()
 	int N = 8;
 	Zombie* horde = zombieHorde(N, "From Dusk Till Dawn");
 
-	for (size_t i = 0; i < N; i++)
+	for (int i = 0; i < N; i++)
 		horde[i].announce();
 	delete[] horde;
 
